@@ -5,8 +5,8 @@ const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
 const ghPages = require("gulp-gh-pages");
 
-const dist = "./dist/";
-// const dist = "/Applications/MAMP/htdocs/PictureProject";
+// const dist = "./dist/";
+const dist = "/Applications/MAMP/htdocs/PictureProject";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
