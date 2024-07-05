@@ -33,7 +33,7 @@ const showMoreStyles = (trigger, wrapper) => {
                     <div class=styles-block>
                         <img src=${src} alt>
                         <h4>${title}</h4>
-                        <a href=${link}>Подробнее</a>
+                        <a href=${link}>More</a>
                     </div>
             `
 

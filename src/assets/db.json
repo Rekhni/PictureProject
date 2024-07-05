@@ -2,22 +2,22 @@
     "styles": [
         {
             "src": "assets/img/styles-5.jpg",
-            "title": "Пастелью",
+            "title": "By pastel",
             "link": "#pastel"
         },
         {
             "src": "assets/img/styles-6.jpg",
-            "title": "Поп-арт",
+            "title": "Pop-art",
             "link": "#popart"
         },
         {
             "src": "assets/img/styles-7.png",
-            "title": "Фотомозаика",
+            "title": "Photomosaic",
             "link": "#mozaika"
         },
         {
             "src": "assets/img/styles-8.jpg",
-            "title": "Шарж",
+            "title": "Caricature",
             "link": "#sharzh"
         }
     ]

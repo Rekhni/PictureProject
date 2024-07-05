@@ -13,9 +13,9 @@ const forms = () => {
     // checkNumInputs('input[name="phone"]');
 
     const message = {
-        loading: "Загрузка...",
-        success: "Спасибо! Скоро мы с вами свяжемся",
-        failure: "Что-то пошло не так...",
+        loading: "Loading...",
+        success: "Thank you! We will contact you soon",
+        failure: "Something went wrong...",
         spinner: "assets/img/spinner.gif",
         ok: 'assets/img/ok.png',
         fail: 'assets/img/fail.png'
@@ -37,14 +37,14 @@ const forms = () => {
         })
 
         upload.forEach(item => {
-            item.previousElementSibling.textContent = "Файл не выбран";
+            item.previousElementSibling.textContent = "File is not selected";
         })
 
         uploadBtn.forEach(item => {
-            item.textContent = 'Загрузить фотографию';
+            item.textContent = 'Load photo';
         })
 
-        price.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
+        price.textContent = 'To calculate, you need to select the size and the material of the painting';
 
         selects.forEach(select => {
             // Get all the 'option' elements within the 'select' element
@@ -52,13 +52,13 @@ const forms = () => {
           
             // Loop through each 'option' element and log its text content
             options.forEach(option => {
-                if (option.textContent === "Выберите размер картины") {
+                if (option.textContent === "Choose picture size") {
                     option.selected = true;
                 }
-                if (option.textContent === "Дополнительные услуги") {
+                if (option.textContent === "Additional services") {
                     option.selected = true;
                 }
-                if (option.textContent === "Выберите материал картины") {
+                if (option.textContent === "Choose picture material") {
                     option.selected = true;
                 }
 
@@ -78,7 +78,17 @@ const forms = () => {
             uploadBtn.forEach(btn => {
                 btn.textContent = name;
             })
-            
+
+            if (item.closest('.main')) {
+                item.closest('.file_upload').style.backgroundColor  = '#f7e7e6';
+                const formData = new FormData();
+                formData.append('file', item.files[0]);
+    
+                postData('assets/server.php', formData)
+                .then(result => console.log(result))
+                .catch(() => console.log('error'))
+                .finally(() => setTimeout(() => clearInputs(), 3000));
+            }
         })
     })
 
